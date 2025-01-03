@@ -5,6 +5,8 @@ import demo.monolith.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class OrderService {
@@ -17,5 +19,9 @@ public class OrderService {
         paymentService.processPayment(savedOrder.getId());
 
         return savedOrder;
+    }
+
+    public List<Order> getAll() {
+        return orderRepository.findAll();
     }
 }
