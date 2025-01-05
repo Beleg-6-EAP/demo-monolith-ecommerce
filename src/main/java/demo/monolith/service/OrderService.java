@@ -13,10 +13,12 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final PaymentService paymentService;
+    private final ShipmentService shipmentService;
 
     public Order create(Order order) {
         final Order savedOrder = orderRepository.save(order);
         paymentService.processPayment(savedOrder.getId());
+        shipmentService.handleShipping(savedOrder.getId());
 
         return savedOrder;
     }

@@ -13,12 +13,10 @@ import java.util.UUID;
 public class PaymentService {
 
     private final PaymentRepository paymentRepository;
-    private final ShipmentService shipmentService;
 
     public void processPayment(String orderId) {
         final Payment payment = new Payment(UUID.randomUUID().toString(), orderId, true);
         paymentRepository.save(payment);
-        shipmentService.handleShipping(payment.getOrderId());
     }
 
     public List<Payment> getAll() {
