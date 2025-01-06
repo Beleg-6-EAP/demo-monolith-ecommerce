@@ -1,3 +1,7 @@
+![Static Badge](https://img.shields.io/badge/Java-23-orange)
+![Static Badge](https://img.shields.io/badge/Maven-4.0.0-red)
+[![Maven Build & Tests](https://github.com/Beleg-6-EAP/demo-monolith-ecommerce/actions/workflows/maven-build-test.yml/badge.svg)](https://github.com/Beleg-6-EAP/demo-monolith-ecommerce/actions/workflows/maven-build-test.yml)
+
 # Monolith E-Commerce Demo
 
 This repository provides a minimal example showcasing the Monolith-Architecture in an E-Commerce setting.
@@ -30,6 +34,7 @@ To create an order `POST` below request to `http://localhost:8080/api/orders`:
 
 ```json
 {
+    "id": "1234-5678-abcd-efgh",
     "userId": "1234-5678-8765-4321",
     "amount": 42.0,
     "status": "New"
